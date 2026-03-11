@@ -26,3 +26,15 @@ const getNewsList = () => {
 }
 
 getNewsList().then((newsList) => newsList.forEach(n => renderNewsItem(n)));
+
+const handleSubmit = () => {
+    const userTitle = document.getElementById("user-headline-input").value;
+    const userContent = document.getElementById("user-content-textarea").value;
+    const newNewsItem = {
+        id: startingNews.length + 1,
+        title: userTitle,
+        content: userContent
+    }
+    // startingNews.push(newNewsItem);
+    renderNewsItem(newNewsItem);
+}
